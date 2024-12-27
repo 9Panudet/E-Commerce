@@ -1,7 +1,5 @@
 const prisma = require("../config/prisma");
-const stripe = require("stripe")(
-  "sk_test_51QZmrs06eBdgFcNHYxvpwOpruSiwUKN93msJBja0u9cWACh7fPPMBqBf2dSR626fePomhFxy0Q5gdM0ushc0VJWD008uIQNwQ6"
-);
+const stripe = require("stripe")(process.env.VITE_STRIPE_SK);
 
 exports.payment = async (req, res) => {
   try {
